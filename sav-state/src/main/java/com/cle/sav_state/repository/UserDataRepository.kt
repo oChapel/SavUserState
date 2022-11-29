@@ -5,7 +5,7 @@ import com.cle.sav_state.data.UserData
 interface UserDataRepository {
     suspend fun saveUserData(userData: UserData)
     suspend fun saveUserDataForcibly(userData: UserData)
-    suspend fun getUserData(): UserData?
+    suspend fun getUserData(gadId: String): UserData?
 
     fun generateUrlByIdMap(
         idMap: Map<String, Int>,

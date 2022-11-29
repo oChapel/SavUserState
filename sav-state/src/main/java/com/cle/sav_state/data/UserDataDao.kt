@@ -17,5 +17,5 @@ class UserDataDao(appContext: Context) {
         userDataRoomDao?.saveUserDataForcibly(userData)
     }
 
-    suspend fun getData(): UserData? = userDataRoomDao?.getData()
+    suspend fun getData(gadId: String): UserData? = userDataRoomDao?.getData(gadId)
 }

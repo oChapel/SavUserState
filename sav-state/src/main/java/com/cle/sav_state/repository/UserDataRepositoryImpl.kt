@@ -21,7 +21,7 @@ class UserDataRepositoryImpl(
         dao.saveUserDataForcibly(userData)
     }
 
-    override suspend fun getUserData(): UserData? = dao.getData()
+    override suspend fun getUserData(gadId: String): UserData? = dao.getData(gadId)
 
     override fun generateUrlByIdMap(
         idMap: Map<String, Int>,

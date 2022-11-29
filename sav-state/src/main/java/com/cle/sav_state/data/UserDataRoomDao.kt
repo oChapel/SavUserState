@@ -14,6 +14,6 @@ interface UserDataRoomDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun saveUserDataForcibly(userData: UserData)
 
-    @Query("SELECT * FROM user_data")
-    suspend fun getData(): UserData?
+    @Query("SELECT * FROM user_data WHERE googleAdvertsId = :gadId")
+    suspend fun getData(gadId: String): UserData?
 }
